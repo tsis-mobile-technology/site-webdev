@@ -24,7 +24,8 @@ env:
     - TZ=US/Pacific # normalize build timestamp
   matrix:
     - CI_TASK="build --dartdoc"
-    - CI_TASK="ng-pkg-pub-upgrade" # fails when new ng pkg vers is available
+    # fails when new ng pkg vers is available
+    - CI_TASK="ng-pkg-pub-upgrade --skip=angular_ast"
     - CI_TASK="test $TEST_OPT"
     - CI_TASK="e2e $E2E_OPT1"
     - CI_TASK="e2e $E2E_OPT2"
